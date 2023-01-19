@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -36,7 +39,7 @@ model Day {
   date      DateTime
   dayHabits DayHabit[]
 
-  @@index([date])
+  @@unique([date])
   @@map("days")
 }
 
