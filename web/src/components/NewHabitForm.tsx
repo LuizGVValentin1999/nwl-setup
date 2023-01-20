@@ -24,7 +24,7 @@ export function NewHabitForm() {
     event.preventDefault()
   
     if(!title || weekDays.length === 0) {
-      return
+      return;
     }
     
     await api.post('habits', {
