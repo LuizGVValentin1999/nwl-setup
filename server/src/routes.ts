@@ -65,7 +65,7 @@ import { FastifyInstance } from "fastify"
 
     const completedHabits = day?.dayHabits.map(dayHabit => {
       return dayHabit.habit_id
-    })
+    }) ?? [];
 
     return {
       possibleHabits,
@@ -73,7 +73,7 @@ import { FastifyInstance } from "fastify"
     }
   })
   
-  app.post('/habits/:id/toggle', async (request) => {
+  app.patch('/habits/:id/toggle', async (request) => {
     const togglesHabitParams = z.object({
       id:z.string().uuid(),
     })
